@@ -1,0 +1,184 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <style type="text/css">
+      .navcolor {
+        color: blue !important;
+      }
+    </style>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <title>COVID-19 Probability Detector</title>
+    <link rel="shortcut icon" href="{{url_for('static', filename='Favicon.png') }}">
+  </head>
+  <body>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+  </body>
+</html>
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <a class="navbar-brand" href="#">
+      <img id="brand-image" alt="website-logo" src="{{url_for('static', filename='Favicon.png') }}" style="height:8mm; width:8mm"/>
+    </a>
+  <a class="navbar-brand" href="#">COVID-19 Probability Detector</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <div class="dropdown show"  style type="text/css"   color:blue >
+      
+        <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown"
+          aria-haspopup="true" aria-expanded="false">
+          Coronavirus
+        </a>
+      
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+            <li><a class="dropdown-item"href="https://www.who.int/emergencies/diseases/novel-coronavirus-2019/question-and-answers-hub/q-a-detail/coronavirus-disease-covid-19#:~:text=symptoms">WHO 
+            </a> </li>
+            <li><a class="dropdown-item" href="https://www.mygov.in/covid-19">COVID-19 RESOURSES</a></li>
+            <li><a class="dropdown-item" href="https://www.worldometers.info/coronavirus/country/india/">covid-19 Meter</a></li>
+        </div>
+      </div>
+                   
+      <li class="nav-item active">
+        <a class="nav-link" href="https://www.instagram.com/aadilrayeen3/">CONTACT US</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<div class="container">
+    <h2 class="text-center mt-3">Coronavirus Probability Detector</h2>
+    <form action="/" method="post">
+  <div class="form-group">
+    <label for="Children">Number of children</label>
+    <input type="text" class="form-control" id="Children" name="Children" placeholder="Enter Number of Children">
+  </div>
+  <div class="form-group">
+    <label for="Cases/1M">Number of cases per 1 Million in City</label>
+    <input type="text" class="form-control" id="Cases/1M" name="Cases/1M" placeholder="Enter Number of Cases per 1 Million in City">
+  </div>
+  <div class="form-group">
+    <label for="Deaths/1M">Number of deaths per 1 Million in City</label>
+    <input type="text" class="form-control" id="Deaths/1M" name="Deaths/1M" placeholder="Enter Number of Deaths per 1 Million in City">
+  </div>
+  <div class="form-group">
+    <label for="Age">Age</label>
+    <input type="text" class="form-control" id="Age" name="Age" placeholder="Age">
+  </div>
+
+  <div class="form-group">
+    <label for="Comascore">Coma Score</label>
+    <select class="form-control custom-select" name="Comascore" id="Comascore">
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+      <option value="5">5</option>
+      <option value="6">6</option>
+      <option value="7">7</option>
+      <option value="8">8</option>
+      <option value="9">9</option>
+      <option value="10">10</option>
+      <option value="11">11</option>
+      <option value="12">12</option>
+      <option value="13">13</option>
+      <option value="14">14</option>
+      <option value="15">15</option>
+    </select>
+  </div>
+  <div class="form-group">
+    <label for="Diuresis">Diuresis</label>
+    <input type="text" class="form-control" id="Diuresis" name="Diuresis" placeholder="Diuresis">
+  </div>
+  <div class="form-group">
+    <label for="Platelets">Platelets</label>
+    <input type="text" class="form-control" id="Platelets" name="Platelets" placeholder="Platelets">
+  </div>
+  <div class="form-group">
+    <label for="HBB">HBB</label>
+    <input type="text" class="form-control" id="HBB" name="HBB" placeholder="HBB">
+  </div>
+  <div class="form-group">
+    <label for="ddimer">D-dimer</label>
+    <input type="text" class="form-control" id="ddimer" name="ddimer" placeholder="D-dimer">
+  </div>
+  <div class="form-group">
+    <label for="Heartrate">Heart Rate</label>
+    <input type="text" class="form-control" id="Heartrate" name="Heartrate" placeholder="Heart Rate">
+  </div>
+  <div class="form-group">
+    <label for="HDLcholesterol">HDL cholesterol</label>
+    <input type="text" class="form-control" id="HDLcholesterol" name="HDLcholesterol" placeholder="HDL Cholesterol">
+  </div>
+  <div class="form-group">
+    <label for="Charlsonindex">Charlson Index</label>
+    <input type="text" class="form-control" id="Charlsonindex" name="Charlsonindex" placeholder="Charlson Index">
+  </div>
+  <div class="form-group">
+    <label for="Bloodglucose">Blood Glucose</label>
+    <select class="form-control custom-select" name="Bloodglucose" id="Bloodglucose">
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+      <option value="5">5</option>
+      <option value="6">6</option>
+      <option value="7">7</option>
+    </select>
+  </div>
+  <div class="form-group">
+    <label for="Insurance">Insurance</label>
+    <input type="text" class="form-control" id="Insurance" name="Insurance" placeholder="Insurance">
+  </div>
+  <div class="form-group">
+    <label for="Salary">Salary</label>
+    <input type="text" class="form-control" id="Salary" name="Salary" placeholder="Salary">
+  </div>
+  <div class="form-group">
+    <label for="FT/month">FT/month</label>
+    <input type="text" class="form-control" id="FT/month" name="FT/month" placeholder="FT/month">
+  </div>
+  <button class="btn btn-primary">Submit</button>
+</form>
+</div>
+<!-- Footer -->
+<footer id="footer" class="page-footer font-small pt-4 bg-primary mt-5" style="color:white">
+  <hr>
+
+  <!-- Footer Text -->
+  <div class="container-fluid text-center mt-3">
+
+    <!-- Grid row -->
+    <div class="row">
+
+      <!-- Grid column -->
+      <div class="col-md-12 mt-md-0 mt-3">
+
+        <!-- Content -->
+        <h5 class="text-uppercase font-weight-bold" style="font-family:Verdana">About</h5>
+        <p style="font-family:Lucida Console">The website is created by Aadil, 3rd year Bachelor in Computer Application (BCA) from Vivekananda Institute of Professional Studies (VIPS).<br>
+        It uses India's Covid-19 dataset from Kaggle to train the data model and use it to predict patient's probability to get virus via personal records.<br>
+        It uses python flask framework for website development and bootstrap for interactive UI design.</p>
+
+      </div>
+      <!-- Grid column -->
+
+  </div>
+ 
